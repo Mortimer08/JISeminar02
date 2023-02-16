@@ -4,7 +4,7 @@
 Напишите метод, который запишет массив, возвращенный предыдущим методом в файл.
 Обработайте ошибки с помощью try-catch конструкции. В случае возникновения исключения, оно должно записаться в лог-файл.
  */
-// import java.util.ArrayList;
+import java.util.logging.*;
 import java.util.Arrays;
 import java.io.File;
 import java.io.FileWriter;
@@ -14,8 +14,6 @@ public class task05 {
         String path = "/home/mort/GB Study Projects/GBJavaIntroducing/Seminar02/";
         String[] fl = getDirList(path);
         writeListToFile(fl);
-        System.out.println(Arrays.toString(fl));
-
     }
 
     public static String[] getDirList(String path) {
