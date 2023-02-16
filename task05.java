@@ -5,27 +5,49 @@
 Обработайте ошибки с помощью try-catch конструкции. В случае возникновения исключения, оно должно записаться в лог-файл.
  */
 import java.util.logging.*;
-import java.util.Arrays;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class task05 {
-    public static void main(String[] args) {
+    static Logger myLogger;
+    static {
+        try {
+            myLogger = Logger.getLogger(task05.class.getName()); // создаём (объект?) логгер
+            // myLogger.setLevel(Level.INFO); // Устанавливаем для своего логгера уровень
+            // INFO
+            // ConsoleHandler fh = new ConsoleHandler(); // создаём экземляр обработчика -
+            // файловый обработчик
+            FileHandler fh = new FileHandler("log.txt",true);
+            myLogger.addHandler(fh); // добавляем логгеру созданный обработчик
+            SimpleFormatter myFormatter = new SimpleFormatter(); // создаём форматтер
+            fh.setFormatter(myFormatter); // устанавливаем обработчику форматтер
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) throws SecurityException, IOException {
+
         String path = "/home/mort/GB Study Projects/GBJavaIntroducing/Seminar02/";
         String[] fl = getDirList(path);
         writeListToFile(fl);
+
     }
 
-    public static String[] getDirList(String path) {
+    public static String[] getDirList(String path) throws SecurityException, IOException {
         String[] fileList = new String[0];
+
         try {
             File targetDir = new File(path);
-            System.out.println("Dir scanned");
+            myLogger.log(Level.INFO, "Dir scanned");
             fileList = targetDir.list();
         } catch (Exception e) {
-            System.out.println("Dir reading error");
-            System.out.println(e.getMessage());
+            String errorMsg = String.format("Error occurred: %s", e.getMessage());
+            myLogger.warning(errorMsg);
         }
+
         return fileList;
     }
 
@@ -37,7 +59,7 @@ public class task05 {
                 fw.append("\n");
             }
             fw.flush();
-            System.out.println("File created");
+            myLogger.log(Level.INFO, "File created");
             fw.close();
         } catch (Exception e) {
             System.out.println("File writing error");

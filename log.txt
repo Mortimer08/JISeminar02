@@ -1,0 +1,8 @@
+Feb 16, 2023 11:03:10 PM task05 getDirList
+INFO: Dir scanned
+Feb 16, 2023 11:03:10 PM task05 writeListToFile
+INFO: File created
+Feb 16, 2023 11:07:09 PM task05 getDirList
+INFO: Dir scanned
+Feb 16, 2023 11:07:09 PM task05 writeListToFile
+INFO: File created
