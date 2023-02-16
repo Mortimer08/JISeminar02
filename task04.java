@@ -7,7 +7,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class taskp4 {
+public class task04 {
     public static void main(String[] args) {
         StringBuilder testLine = line("TEST");
         writeToFile(testLine);
