@@ -6,3 +6,17 @@ Feb 16, 2023 11:07:09 PM task05 getDirList
 INFO: Dir scanned
 Feb 16, 2023 11:07:09 PM task05 writeListToFile
 INFO: File created
+Feb 16, 2023 11:08:38 PM task05 getDirList
+INFO: Dir scanned
+Feb 16, 2023 11:08:38 PM task05 writeListToFile
+INFO: File created
+Feb 16, 2023 11:08:58 PM task05 getDirList
+INFO: Dir scanned
+Feb 16, 2023 11:10:38 PM task05 getDirList
+INFO: Dir scanned
+Feb 16, 2023 11:10:38 PM task05 writeListToFile
+INFO: File created
+Feb 16, 2023 11:11:38 PM task05 getDirList
+INFO: Dir scanned
+Feb 16, 2023 11:11:38 PM task05 writeListToFile
+WARNING: File writing error occurred: null

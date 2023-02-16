@@ -30,7 +30,7 @@ public class task05 {
 
     public static void main(String[] args) throws SecurityException, IOException {
 
-        String path = "/home/mort/GB Study Projects/GBJavaIntroducing/Seminar02/";
+        String path = "/home/mort/GB Study Projects/GBJavaIntroducing/Seminar03/";
         String[] fl = getDirList(path);
         writeListToFile(fl);
 
@@ -62,8 +62,8 @@ public class task05 {
             myLogger.log(Level.INFO, "File created");
             fw.close();
         } catch (Exception e) {
-            System.out.println("File writing error");
-            System.out.println(e.getMessage());
+            String errorMsg = String.format("File writing error occurred: %s", e.getMessage());
+            myLogger.warning(errorMsg);
         }
     }
 }
